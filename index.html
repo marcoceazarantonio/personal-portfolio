@@ -47,8 +47,8 @@ a{color:inherit}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;margin-top:1.8rem;background:var(--navy);border-radius:18px;padding:1.1rem}
 .stats b{display:block;font:900 clamp(1.5rem,3vw,2.2rem)/1;letter-spacing:-.04em}
 .stats span{display:block;font-size:.78rem;line-height:1.35;margin-top:.35rem;color:var(--soft);font-weight:600}
-.close{position:relative;aspect-ratio:1/1.05;border-radius:22px;background:var(--me) 50% 14%/210% auto;border:6px solid var(--navy)}
-.close .pill{position:absolute;left:1rem;bottom:1rem;font-size:.85rem;padding:.55rem 1rem}
+.close{position:relative;aspect-ratio:4/5;max-width:440px;width:100%;justify-self:center;margin-bottom:1.6rem;border-radius:22px;background:var(--me) 50% 18%/cover;border:6px solid var(--navy)}
+.close .pill{position:absolute;left:1rem;bottom:-1.4rem;font-size:.85rem;padding:.55rem 1rem}
 /* disciplines */
 .dis .in{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:start}
 .list{display:grid;gap:.7rem}
@@ -88,13 +88,18 @@ a{color:inherit}
 .aw strong{display:block;margin-top:.7rem;font-weight:800;line-height:1.3}
 .aw small{display:block;color:var(--soft);font-size:.8rem;line-height:1.45;margin-top:.35rem;font-weight:600}
 /* experience */
-.row{display:grid;grid-template-columns:1.1fr 1.7fr auto;gap:1.5rem;padding:1.3rem 0;border-top:2px solid var(--navy);align-items:center}
-.row:last-child{border-bottom:2px solid var(--navy)}
-.row h3{font:900 1.15rem/1.2;letter-spacing:-.025em}
-.row h3 small{display:block;font:600 .88rem/1.4 var(--f);letter-spacing:0;color:var(--mist);margin-top:.2rem}
-.row p{max-width:58ch}
-.row time{background:var(--navy);color:var(--sand);padding:.4rem .95rem;border-radius:99px;font-weight:700;font-size:.82rem;white-space:nowrap}
-.row.now time{background:var(--deep)}
+.feat,.more{display:grid;gap:1rem}
+.feat{grid-template-columns:1fr 1fr;margin-bottom:1rem}
+.more{grid-template-columns:repeat(3,1fr)}
+.xc{border-radius:20px;padding:1.2rem 1.2rem 1.3rem;border:2px solid var(--navy);display:flex;flex-direction:column;gap:.35rem}
+.xc time{align-self:flex-start;background:var(--navy);color:var(--sand);padding:.3rem .8rem;border-radius:99px;font-weight:700;font-size:.76rem;margin-bottom:.5rem}
+.xc h3{font:900 1.05rem/1.2;letter-spacing:-.02em}
+.xc small{font-weight:700;font-size:.8rem;color:var(--deep);line-height:1.35}
+.xc p{font-size:.85rem;line-height:1.55;margin-top:.3rem}
+.xc.big{background:var(--deep);color:var(--sand);border-color:var(--deep);padding:1.6rem}
+.xc.big h3{font-size:1.7rem}
+.xc.big small{color:var(--soft);font-size:.9rem}
+.xc.big p{font-size:.95rem}
 /* education */
 .edu{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
 .edu div{background:var(--navy);border-radius:20px;padding:1.4rem}
@@ -110,18 +115,18 @@ footer{background:var(--navy);padding:1.3rem;text-align:center;font-size:.82rem;
 @media (max-width:960px){
  .hero .in,.about .in,.dis .in{grid-template-columns:1fr}
  .photo{margin:2.5rem 0 0 auto;max-width:300px;width:78%}
- .close{max-width:420px}
+ .close{justify-self:start}
  .awards{grid-template-columns:1fr 1fr}
  .cards{grid-template-columns:1fr}
  .edu{grid-template-columns:1fr 1fr}
- .row{grid-template-columns:1fr;gap:.6rem}
- .row time{justify-self:start}
+ .feat{grid-template-columns:1fr}
+ .more{grid-template-columns:1fr 1fr}
  .steps{grid-template-columns:1fr;gap:1.5rem}
  .hub{width:130px;height:130px}.hub .ic{width:56px;height:56px}
  .step::before{display:none}
  .step{border-radius:28px}
 }
-@media (max-width:560px){.stats{grid-template-columns:1fr 1fr}.edu,.awards{grid-template-columns:1fr}}
+@media (max-width:560px){.stats{grid-template-columns:1fr 1fr}.edu,.awards,.more{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
@@ -161,7 +166,7 @@ footer{background:var(--navy);padding:1.3rem;text-align:center;font-size:.82rem;
   <div class="in">
     <div>
       <h2 class="h">Hi, I'm Marco</h2>
-      <p>I'm a computer engineering student at the University of Mindanao who also edits, designs and leads. I run a regional student organization, edit the university yearbook and work on a DOST project that identifies potholes.</p>
+      <p>I'm a computer engineering student at the University of Mindanao who also edits, designs and leads. I run a regional student organization, led the university yearbook as Editor-in-Chief and work on a DOST project that identifies potholes.</p>
       <p>I like work that is accurate, clear and finished on time.</p>
       <div class="stats">
         <div><b>4+</b><span>Years in student leadership and publications</span></div>
@@ -170,7 +175,7 @@ footer{background:var(--navy);padding:1.3rem;text-align:center;font-size:.82rem;
         <div><b>1</b><span>Exchange abroad, Bangkok</span></div>
       </div>
     </div>
-    <div class="close" role="img" aria-label="Close-up portrait of Marco wearing glasses"><span class="pill">Computer Engineering, UM Davao</span></div>
+    <div class="close" role="img" aria-label="Marco Ceazar Antonio seated with an open book, wearing glasses and a navy checked blazer"><span class="pill">Computer Engineering, UM Davao</span></div>
   </div>
 </section>
 
@@ -238,19 +243,8 @@ footer{background:var(--navy);padding:1.3rem;text-align:center;font-size:.82rem;
 <section class="band S" id="experience">
   <div class="in">
     <h2 class="h">Experience</h2>
-    <div>
-      <div class="row now"><h3>President<small>ICPEP.SE Region XI</small></h3><p>Lead the regional student organization across participating schools, coordinating programs, competitions and professional development.</p><time>2025 – 2026</time></div>
-      <div class="row now"><h3>Editor-in-Chief<small>UM Vinta Yearbook</small></h3><p>Lead the editorial team from planning to production, coordinating writers, editors and layout artists.</p><time>Aug 2025 – Aug 2026</time></div>
-      <div class="row"><h3>Treasurer<small>CODEE RXI</small></h3><p>Managed financial records and helped plan budgets and resource allocation for programs.</p><time>2024 – 2025</time></div>
-      <div class="row"><h3>Treasurer<small>UM Council of College Student Government</small></h3><p>Handled records, expense monitoring and budget preparation for student government activities.</p><time>2024 – 2025</time></div>
-      <div class="row"><h3>President<small>UM College of Engineering Education, CSG</small></h3><p>Led operations and coordination with members, sponsors, institutions and external partners.</p><time>Jan 2025</time></div>
-      <div class="row"><h3>Vice President<small>UM College of Engineering Education, CSG</small></h3><p>Supported the president in coordinating programs and communication among officers and stakeholders.</p><time>Jun 2024</time></div>
-      <div class="row"><h3>Associate Editor<small>UM Vinta Yearbook</small></h3><p>Reviewed, edited and fact-checked articles, and supported the Editor-in-Chief on deadlines and standards.</p><time>Oct 2024 – 2025</time></div>
-      <div class="row"><h3>Public Information Officer<small>ICPEP-SE UM Davao Chapter</small></h3><p>Managed announcements and communication materials across official platforms.</p><time>2023 – 2024</time></div>
-      <div class="row"><h3>Writer<small>UM Vinta Yearbook</small></h3><p>Produced articles, reports and publication content backed by research and fact-checking.</p><time>Aug 2022 – 2024</time></div>
-      <div class="row"><h3>1st Year Board of Director<small>ICPEP-SE Davao Chapter</small></h3><p>Took part in chapter planning and represented first-year Computer Engineering students.</p><time>2022 – 2023</time></div>
-      <div class="row"><h3>Editorial Writer<small>UM Vinta Yearbook</small></h3><p>Wrote editorial content, including research and interviews.</p><time>2022 – 2023</time></div>
-    </div>
+    <div class="feat"><article class="xc big"><time>2025 – 2026</time><h3>President</h3><small>ICPEP.SE Region XI</small><p>Lead the regional student organization across participating schools, coordinating programs, competitions and professional development.</p></article><article class="xc big"><time>Aug 2025 – Aug 2026</time><h3>Editor-in-Chief</h3><small>UM Vinta Yearbook</small><p>Led the editorial team from planning to production, coordinating writers, editors and layout artists.</p></article></div>
+    <div class="more"><article class="xc"><time>2024 – 2025</time><h3>Treasurer</h3><small>CODEE RXI</small><p>Managed financial records and helped plan budgets and resource allocation for programs.</p></article><article class="xc"><time>2024 – 2025</time><h3>Treasurer</h3><small>UM Council of College Student Government</small><p>Handled records, expense monitoring and budget preparation for student government activities.</p></article><article class="xc"><time>Jan 2025</time><h3>President</h3><small>UM College of Engineering Education, CSG</small><p>Led operations and coordination with members, sponsors, institutions and external partners.</p></article><article class="xc"><time>Jun 2024</time><h3>Vice President</h3><small>UM College of Engineering Education, CSG</small><p>Supported the president in coordinating programs and communication among officers and stakeholders.</p></article><article class="xc"><time>Oct 2024 – 2025</time><h3>Associate Editor</h3><small>UM Vinta Yearbook</small><p>Reviewed, edited and fact-checked articles, and supported the Editor-in-Chief on deadlines and standards.</p></article><article class="xc"><time>2023 – 2024</time><h3>Public Information Officer</h3><small>ICPEP-SE UM Davao Chapter</small><p>Managed announcements and communication materials across official platforms.</p></article><article class="xc"><time>Aug 2022 – 2024</time><h3>Writer</h3><small>UM Vinta Yearbook</small><p>Produced articles, reports and publication content backed by research and fact-checking.</p></article><article class="xc"><time>2022 – 2023</time><h3>1st Year Board of Director</h3><small>ICPEP-SE Davao Chapter</small><p>Took part in chapter planning and represented first-year Computer Engineering students.</p></article><article class="xc"><time>2022 – 2023</time><h3>Editorial Writer</h3><small>UM Vinta Yearbook</small><p>Wrote editorial content, including research and interviews.</p></article></div>
   </div>
 </section>
 
